@@ -7,7 +7,6 @@ export const ThemeContextProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     setTheme(localStorage.getItem('theme') || 'dark')
-    console.log(localStorage.getItem('theme'))
   }, [])
 
   return (
