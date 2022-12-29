@@ -19,13 +19,13 @@ const ThemeSwitcher = () => {
     <>
       <ThemeContextProvider>
         <button
-          className=' bg-gray-200 grid place-items-center h-16 w-16 rounded-xl dark:bg-gray-700 absolute top-0'
+          className='grid place-items-center h-16 w-16 rounded-xl bg-transparent absolute top-0'
           onClick={SwitchThemeHandler}
         >
           {theme == 'dark' ? (
-            <MdOutlineLightMode size='40px' color='white' />
+            <MdOutlineLightMode size='30px' color='white' />
           ) : (
-            <MdOutlineDarkMode size='40px' />
+            <MdOutlineDarkMode size='30px' />
           )}
         </button>
       </ThemeContextProvider>

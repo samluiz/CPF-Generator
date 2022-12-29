@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, forwardRef, Ref } from 'react'
+import { ChangeEventHandler, forwardRef, Ref } from 'react'
 
 export interface IProps {
   labelText?: string
@@ -8,7 +8,7 @@ export interface IProps {
   inputPlaceholder?: string
   list?: string
   value?: string
-  onChange?: ChangeEventHandler<HTMLInputElement>
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
 
 const Input = forwardRef(
@@ -27,7 +27,7 @@ const Input = forwardRef(
     return (
       <>
         <div className=' grid '>
-          <label className=' dark:text-white' htmlFor={inputId}>
+          <label className=' dark:text-white font-light' htmlFor={inputId}>
             {labelText}
           </label>
           <input
@@ -38,7 +38,7 @@ const Input = forwardRef(
             placeholder={inputPlaceholder}
             id={inputId}
             ref={ref}
-            className=' dark:text-white p-2 block w-full px-0 mt-0 bg-transparent border-t-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-white focus:border-l-2 focus:border-r-2 rounded-md duration-75 border-gray-200 placeholder-gray-500 placeholder:text-center'
+            className=' text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-75   placeholder-gray-500 placeholder:text-center'
           />
         </div>
       </>
