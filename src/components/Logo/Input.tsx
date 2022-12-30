@@ -19,7 +19,7 @@ const Logo = ({ height, width, opacity, className }: IProps) => {
         opacity={opacity}
         className={className}
       >
-        <g clip-path='url(#clip0_74_2)'>
+        <g clipPath='url(#clip0_74_2)'>
           <path
             d='M10.5185 23.0018H13.4633C13.5604 23.0018 13.6212 23.116 13.5733 23.2088L12.099 26.0732L10.5185 29.1446L8.9379 26.0732L7.46361 23.2088C7.41631 23.116 7.47713 23.0018 7.57357 23.0018H10.5185V23.0018Z'
             fill='black'

@@ -1,6 +1,14 @@
-import { PropsWithChildren } from 'react'
+import {
+  PropsWithChildren,
+  MouseEventHandler,
+  ComponentPropsWithoutRef,
+} from 'react'
 
-const Button = ({ children }: PropsWithChildren) => {
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  children: string
+}
+
+const Button = ({ children }: ButtonProps) => {
   return (
     <>
       <button

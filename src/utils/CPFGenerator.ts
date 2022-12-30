@@ -1,6 +1,6 @@
 import { digitVerifier } from './CPFDigitVerifier'
 
-export function gerarCpf(region: string) {
+export function generateCPF(region: string) {
   let regionDigit
   let digit10
   let digit11
@@ -12,6 +12,7 @@ export function gerarCpf(region: string) {
   }
 
   // Sim, esse switch case irá virar um hashmap quando eu tiver coragem pra refatorar
+  //para de ser preguioçoso seu fdp
   switch (region.toUpperCase()) {
     case 'DF':
     case 'GO':
