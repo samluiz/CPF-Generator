@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import Input from '../Input/Index'
 import DropdownInput from '../DropdownInput/Index'
 import { useForm } from 'react-hook-form'
@@ -10,13 +10,14 @@ import { UserContext } from '../../contexts/UserContext'
 const FormContainer = () => {
   const { registryData, setRegistryData, setCpf, cpf } = useContext(UserContext)
 
-  const { handleSubmit, register, reset, watch } = useFormContext()
+  const { handleSubmit, register, resetField, watch } = useFormContext()
 
   const watchAll = watch()
 
   const onSubmit = (data: any) => {
     const cpf = generateCPF(data.birthPlace)
     setCpf(cpf)
+    resetField('birthPlace')
   }
 
   return (

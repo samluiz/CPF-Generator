@@ -10,8 +10,6 @@ const Card = () => {
 
   const { cpf } = useContext(UserContext)
 
-  console.log(cpf)
-
   const firstName = getValues('firstName')
   const surname = getValues('surname')
   const birthDate = formatDate(getValues('birthDate'))

@@ -1,5 +1,3 @@
-import {} from 'react'
-
 interface IProps {
   height?: string
   width?: string

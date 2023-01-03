@@ -65,7 +65,7 @@ export function generateCPF(region: string) {
       console.error(
         'Região inválida: ',
         region,
-        '. Região selecionada automaticamente (DF)'
+        ' Região selecionada automaticamente (DF)'
       )
   }
   cpf.push(regionDigit)

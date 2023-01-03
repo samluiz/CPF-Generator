@@ -19,7 +19,6 @@ const CopyToClipboard = () => {
 
     copyText(parentElement.innerText)
       .then(() => {
-        console.log(parentElement)
         if (
           parentElement.innerText &&
           typeof parentElement.innerText !== 'number'

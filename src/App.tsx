@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useContext } from 'react'
 import MainContainer from './components/MainContainer/Index'
-import { ThemeContext, ThemeContextProvider } from './contexts/ThemeContext'
+import { ThemeContextProvider } from './contexts/ThemeContext'
 import ThemeSwitcher from './components/ThemeSwitcher/Index'
 import TailwindUpdater from './components/TailwindUpdater/Index'
 
