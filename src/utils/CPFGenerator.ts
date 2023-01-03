@@ -12,7 +12,6 @@ export function generateCPF(region: string) {
   }
 
   // Sim, esse switch case irá virar um hashmap quando eu tiver coragem pra refatorar
-  //para de ser preguioçoso seu fdp
   switch (region.toUpperCase()) {
     case 'DF':
     case 'GO':
@@ -62,7 +61,12 @@ export function generateCPF(region: string) {
       regionDigit = 0
       break
     default:
-      console.error('Região inválida: ', region)
+      regionDigit = 1
+      console.error(
+        'Região inválida: ',
+        region,
+        '. Região selecionada automaticamente (DF)'
+      )
   }
   cpf.push(regionDigit)
 
