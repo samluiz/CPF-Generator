@@ -14,9 +14,14 @@ const CopyToClipboard = () => {
   }
 
   const handleClick = (e: any) => {
-    copyText(e.target.text.replace(' ', ''))
+    const eventTarget = e.target as HTMLElement
+    const parentElement = eventTarget.parentElement as HTMLSpanElement
+
+    copyText(parentElement.innerText)
       .then(() => {
-        setIsCopied(true)
+        if (parentElement.innerText) {
+          setIsCopied(true)
+        }
         setTimeout(() => {
           setIsCopied(false)
         }, 3000)
@@ -28,9 +33,11 @@ const CopyToClipboard = () => {
 
   return (
     <>
-      <button className='cursor-pointer' onClick={handleClick}>
-        {isCopied ? <AiOutlineCheck /> : <MdOutlineCopyAll />}
-      </button>
+      {isCopied ? (
+        <AiOutlineCheck />
+      ) : (
+        <MdOutlineCopyAll className='cursor-pointer' onClick={handleClick} />
+      )}
     </>
   )
 }
