@@ -19,7 +19,11 @@ const CopyToClipboard = () => {
 
     copyText(parentElement.innerText)
       .then(() => {
-        if (parentElement.innerText) {
+        console.log(parentElement)
+        if (
+          parentElement.innerText &&
+          typeof parentElement.innerText !== 'number'
+        ) {
           setIsCopied(true)
         }
         setTimeout(() => {
@@ -36,7 +40,10 @@ const CopyToClipboard = () => {
       {isCopied ? (
         <AiOutlineCheck />
       ) : (
-        <MdOutlineCopyAll className='cursor-pointer' onClick={handleClick} />
+        <button className='cursor-pointer z-50' onClick={handleClick}>
+          {' '}
+          <MdOutlineCopyAll className=' pointer-events-none' />
+        </button>
       )}
     </>
   )
