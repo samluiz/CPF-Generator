@@ -1,6 +1,5 @@
 import MainContainer from './components/MainContainer/Index'
 import { ThemeContextProvider } from './contexts/ThemeContext'
-import ThemeSwitcher from './components/ThemeSwitcher/Index'
 import TailwindUpdater from './components/TailwindUpdater/Index'
 
 function App() {
