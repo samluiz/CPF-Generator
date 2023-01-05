@@ -1,4 +1,5 @@
 import { ChangeEventHandler, forwardRef, Ref } from 'react'
+import { useFormContext } from 'react-hook-form'
 
 export interface IProps {
   labelText?: string
@@ -26,11 +27,16 @@ const Input = forwardRef(
   ) => {
     return (
       <>
-        <div className=' grid '>
-          <label className=' dark:text-white font-light' htmlFor={inputId}>
+        <div className=' grid w-full'>
+          <label
+            className=' dark:text-white font-light max-w-fit'
+            htmlFor={inputId}
+          >
             {labelText}
           </label>
           <input
+            autoCapitalize='characters'
+            autoComplete='off'
             value={value}
             onChange={onChange}
             type={inputType}
@@ -38,7 +44,7 @@ const Input = forwardRef(
             placeholder={inputPlaceholder}
             id={inputId}
             ref={ref}
-            className=' text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-75   placeholder-gray-500 placeholder:text-center'
+            className=' text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 min-w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-200   placeholder-gray-500 placeholder:text-center'
           />
         </div>
       </>
