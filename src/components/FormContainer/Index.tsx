@@ -8,11 +8,23 @@ import { useFormContext } from 'react-hook-form'
 import { UserContext } from '../../contexts/UserContext'
 
 const FormContainer = () => {
-  const { registryData, setRegistryData, setCpf, cpf } = useContext(UserContext)
+  const { setCpf } = useContext(UserContext)
 
-  const { handleSubmit, register, resetField, watch } = useFormContext()
+  const {
+    handleSubmit,
+    register,
+    resetField,
+    watch,
+    formState: { errors },
+  } = useFormContext()
 
-  const watchAll = watch()
+  useForm({
+    defaultValues: {
+      birthDate: new Date().toISOString().substring(0, 10),
+    },
+  })
+
+  watch()
 
   const onSubmit = (data: any) => {
     const cpf = generateCPF(data.birthPlace)
@@ -21,14 +33,14 @@ const FormContainer = () => {
   }
 
   return (
-    <div className='grid place-items-center grid-flow-col'>
+    <div className='grid place-items-center grid-flow-col max-w-fit'>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='p-2 flex flex-col gap-4'
+        className='p-2 flex flex-col gap-4 w-full'
       >
-        <div className='flex flex-row gap-2 justify-between content-center '>
+        <div className='flex flex-row gap-2 justify-between content-center flex-wrap'>
           <Input
-            labelText='Nome'
+            labelText='Nome completo'
             inputType='text'
             inputId='firstName'
             inputName='firstName'
@@ -38,17 +50,16 @@ const FormContainer = () => {
             })}
           />
           <Input
-            labelText='Sobrenome'
             inputType='text'
             inputId='surname'
             inputName='surname'
             inputPlaceholder='Delacruz'
             {...register('surname', {
-              required: true,
+              required: false,
             })}
           />
         </div>
-        <div className='flex flex-col justify-between gap-2'>
+        <div className='flex flex-col justify-center align-center gap-2 flex-wrap'>
           <Input
             labelText='Dados de nascimento'
             inputType='date'
