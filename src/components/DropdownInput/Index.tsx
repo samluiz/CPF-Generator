@@ -39,7 +39,7 @@ const DropdownInput = forwardRef(
           id={inputId}
           ref={ref}
           list='states'
-          className='   text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 max-w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-75   placeholder-gray-500 placeholder:text-center '
+          className='shadow-xl text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 max-w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-75   placeholder-gray-500 placeholder:text-center '
         />
         {errors.birthPlace && errors.birthPlace.type === 'required' && (
           <span className=' text-red-500 text-sm'>Escolha um estado.</span>

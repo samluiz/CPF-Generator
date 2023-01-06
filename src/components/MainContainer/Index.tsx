@@ -8,7 +8,7 @@ const MainContainer = ({}) => {
   const methods = useForm<IRegistryData>()
 
   return (
-    <main className=' min-h-fit rounded-2xl dark:bg-slate-900 bg-white flex flex-col p-6 shadow-2xl min-w-fit justify-center flex-wrap gap-8 duration-500'>
+    <main className=' min-h-fit rounded-2xl bg-transparent flex flex-col p-6 min-w-fit justify-center flex-wrap gap-8 duration-500'>
       <ThemeSwitcher />
       <FormProvider {...methods}>
         <UserContextProvider>

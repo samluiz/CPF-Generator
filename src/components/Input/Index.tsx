@@ -44,7 +44,7 @@ const Input = forwardRef(
             placeholder={inputPlaceholder}
             id={inputId}
             ref={ref}
-            className=' text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 min-w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-200   placeholder-gray-500 placeholder:text-center'
+            className=' text-gray-800 dark:text-white bg-gray-300 dark:bg-slate-800 min-w-full border-0 p-2 appearance-none outline-none focus:ring-1 dark:focus:border-b-0 rounded-md duration-200 shadow-xl placeholder-gray-500 placeholder:text-center'
           />
         </div>
       </>
